@@ -1,606 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Serious Guide for  plecaczek - Getting Started damn bro</title>
+    <title>Plecaczek 101: Jak Uniknąć Kary Godnej Występku (Fajne Plecy = Fajne Życie)</title>
+    <!-- Ładowanie Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Używamy czcionki Inter, standardowej dla nowoczesnych stron */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            background: white;
-            padding: 30px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            border-radius: 10px;
-        }
-
-        .header-content {
-            text-align: center;
-        }
-
-        h1 {
-            color: #4285f4;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .google-colors {
-            display: inline-flex;
-            gap: 3px;
-        }
-
-        .g-blue { color: #4285f4; }
-        .g-red { color: #ea4335; }
-        .g-yellow { color: #fbbc05; }
-        .g-green { color: #34a853; }
-
-        .subtitle {
-            color: #666;
-            font-size: 1.2em;
-        }
-
-        .nav-menu {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-menu ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #4285f4;
-            font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .nav-menu a:hover {
-            background: #4285f4;
-            color: white;
-        }
-
-        .content-section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            color: #4285f4;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        h3 {
-            color: #34a853;
-            margin: 20px 0 10px 0;
-        }
-
-        .step-box {
-            background: #f8f9fa;
-            padding: 20px;
-            margin: 15px 0;
-            border-left: 4px solid #4285f4;
-            border-radius: 5px;
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: #4285f4;
-            color: white;
-            text-align: center;
-            line-height: 30px;
-            border-radius: 50%;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .tip-box {
-            background: #fff3cd;
-            border-left: 4px solid #fbbc05;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-
-        .tip-box strong {
-            color: #856404;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .service-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .service-icon {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #4285f4;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
-
-        .button:hover {
-            background: #357ae8;
-        }
-
-        .search-demo {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background: white;
-            border: 2px solid #dfe1e5;
-            border-radius: 24px;
-            padding: 10px 20px;
-            margin-bottom: 15px;
-        }
-
-        .search-bar input {
-            flex: 1;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            padding: 5px;
-        }
-
-        .search-icon {
-            color: #9aa0a6;
-            margin-right: 10px;
-        }
-
-        footer {
-            background: white;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
-
-        .quick-tips {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .quick-tip {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8em; }
-            .nav-menu ul { flex-direction: column; align-items: center; }
-            .service-grid { grid-template-columns: 1fr; }
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc; /* Jasnoszary tło */
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <h1>
-                    <span class="google-colors">
-                        <span class="g-blue">G</span>
-                        <span class="g-red">o</span>
-                        <span class="g-yellow">o</span>
-                        <span class="g-blue">g</span>
-                        <span class="g-green">l</span>
-                        <span class="g-red">e</span>
-                    </span>
-                    
-                </h1>
-                <p class="subtitle">Your Complete Tutorial for Getting Started with Plecaczek</p>
-            </div>
+<body class="p-4 sm:p-8 bg-gray-50 min-h-screen">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl p-6 md:p-10 border-t-8 border-indigo-600">
+
+        <!-- Nagłówek -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-800 mb-2">
+                Plecaczek 101: Misja Kręgosłup
+            </h1>
+            <p class="text-xl text-gray-600 font-medium">
+                Krótki kurs, po którym już nigdy nie będziesz wyglądać jak turysta z roku 1998.
+            </p>
         </header>
 
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#search">Google Search</a></li>
-                <li><a href="#account">Google Account</a></li>
-                <li><a href="#services">Popular Services</a></li>
-                <li><a href="#tips">Pro Tips</a></li>
-            </ul>
-        </nav>
-
-        <section id="getting-started" class="content-section">
-            <h2>🚀 Getting Started with Google</h2>
-            <p>Google is the world's most popular search engine and offers a suite of free online services. Here's how to get started!</p>
+        <!-- Sekcja Zasad -->
+        <main class="space-y-12">
             
-            <h3>How to Access Google</h3>
-            <div class="step-box">
-                <span class="step-number">1</span>
-                <strong>Open Your Web Browser</strong>
-                <p>Use any browser like Chrome, Firefox, Safari, or Edge</p>
-            </div>
-            
-            <div class="step-box">
-                <span class="step-number">2</span>
-                <strong>Navigate to Google</strong>
-                <p>Type <strong>www.google.com</strong> in the address bar and press Enter</p>
-            </div>
-            
-            <div class="step-box">
-                <span class="step-number">3</span>
-                <strong>Start Searching!</strong>
-                <p>Type anything you want to find in the search box</p>
-            </div>
-
-            <div class="tip-box">
-                <strong>💡 Quick Tip:</strong> Set Google as your homepage for instant access when you open your browser!
-            </div>
-        </section>
-
-        <section id="search" class="content-section">
-            <h2>🔍 Mastering Google Search</h2>
-            <p>Google Search is powerful and easy to use. Here's how to search effectively:</p>
-            
-            <div class="search-demo">
-                <h3>Try a Search Demo</h3>
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Type your search query here..." id="demo-search">
+            <!-- Zasada 1: Dwa Paski -->
+            <div class="flex flex-col md:flex-row items-center bg-indigo-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 rounded-xl">
+                <div class="md:w-1/3 mb-4 md:mb-0 md:mr-6">
+                    <!-- Placeholder dla Psa - Wiedza -->
+                    <img src="https://placehold.co/400x300/6A5ACD/EEEEEE?text=Piesek+Wiedzący+I+Wygrywający" 
+                         alt="Wesoły piesek noszący plecak poprawnie, wygląda jak zwycięzca" 
+                         class="w-full h-auto rounded-lg object-cover shadow-xl"/>
                 </div>
-                <p><em>This is a demo search bar - try typing something!</em></p>
-            </div>
-
-            <h3>Search Tips & Tricks</h3>
-            <div class="step-box">
-                <strong>Use Quotes for Exact Phrases</strong>
-                <p>Example: <code>"how to use Google"</code> finds that exact phrase</p>
-            </div>
-            
-            <div class="step-box">
-                <strong>Exclude Words with Minus</strong>
-                <p>Example: <code>cars -electric</code> shows cars but not electric ones</p>
-            </div>
-            
-            <div class="step-box">
-                <strong>Search Within a Site</strong>
-                <p>Example: <code>site:wikipedia.org artificial intelligence</code></p>
-            </div>
-            
-            <div class="step-box">
-                <strong>Find Similar Sites</strong>
-                <p>Example: <code>related:amazon.com</code> finds sites like Amazon</p>
-            </div>
-        </section>
-
-        <section id="account" class="content-section">
-            <h2>👤 Creating a Google Account</h2>
-            <p>A Google Account gives you access to all Google services with one login!</p>
-            
-            <h3>Steps to Create Your Account</h3>
-            <div class="step-box">
-                <span class="step-number">1</span>
-                <strong>Go to Google Account Creation</strong>
-                <p>Visit <strong>accounts.google.com</strong> and click "Create account"</p>
-            </div>
-            
-            <div class="step-box">
-                <span class="step-number">2</span>
-                <strong>Fill in Your Information</strong>
-                <ul style="margin-left: 40px; margin-top: 10px;">
-                    <li>First and last name</li>
-                    <li>Choose a username (this becomes your Gmail address)</li>
-                    <li>Create a strong password</li>
-                    <li>Confirm your password</li>
-                </ul>
-            </div>
-            
-            <div class="step-box">
-                <span class="step-number">3</span>
-                <strong>Add Recovery Information</strong>
-                <p>Phone number and recovery email (optional but recommended)</p>
-            </div>
-            
-            <div class="step-box">
-                <span class="step-number">4</span>
-                <strong>Verify Your Account</strong>
-                <p>Google may send a verification code to your phone</p>
-            </div>
-
-            <div class="tip-box">
-                <strong>🔐 Security Tip:</strong> Enable 2-factor authentication for extra security!
-            </div>
-        </section>
-
-        <section id="services" class="content-section">
-            <h2>📱 Popular Google Services</h2>
-            <p>Once you have a Google account, you can access these amazing free services:</p>
-            
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-icon">📧</div>
-                    <h3>Gmail</h3>
-                    <p>Free email with 15GB storage</p>
-                    <small>Send and receive emails, organize with labels</small>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📁</div>
-                    <h3>Google Drive</h3>
-                    <p>Cloud storage for your files</p>
-                    <small>Store documents, photos, videos in the cloud</small>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📄</div>
-                    <h3>Google Docs</h3>
-                    <p>Online word processor</p>
-                    <small>Create and edit documents online</small>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Google Sheets</h3>
-                    <p>Online spreadsheets</p>
-                    <small>Create spreadsheets and analyze data</small>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🗺️</div>
-                    <h3>Google Maps</h3>
-                    <p>Navigation and exploration</p>
-                    <small>Find directions, explore places, check traffic</small>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📷</div>
-                    <h3>Google Photos</h3>
-                    <p>Photo storage and sharing</p>
-                    <small>Back up photos, create albums, edit images</small>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📅</div>
-                    <h3>Google Calendar</h3>
-                    <p>Schedule and organize</p>
-                    <small>Manage events, set reminders, share calendars</small>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎥</div>
-                    <h3>YouTube</h3>
-                    <p>Video platform</p>
-                    <small>Watch, upload, and share videos</small>
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl font-bold text-indigo-700 mb-2">1. Zbrodnia Jednego Paska!</h2>
+                    <p class="text-gray-700 text-lg">
+                        To nie jest wybieg dla modeli w Mediolanie (chyba że to Fashion Week na krzywy kręgosłup). Jeden pasek to **zbrodnia przeciwko Twojej postawie** i gwarantowana asymetria mięśni. Używaj **obu**. Albo skończysz jak ten pies, który zapomniał, gdzie zostawił smycz.
+                    </p>
                 </div>
             </div>
 
-            <h3>How to Access These Services</h3>
-            <div class="step-box">
-                <strong>Method 1: Google Apps Menu</strong>
-                <p>Click the 9-dot grid icon ⋮⋮⋮ in the top-right corner when on Google.com</p>
-            </div>
-            
-            <div class="step-box">
-                <strong>Method 2: Direct URLs</strong>
-                <p>Type the service URL directly: gmail.com, drive.google.com, docs.google.com, etc.</p>
-            </div>
-        </section>
-
-        <section id="tips" class="content-section">
-            <h2>💡 Pro Tips for Google Users</h2>
-            
-            <div class="quick-tips">
-                <div class="quick-tip">
-                    <strong>Voice Search</strong>
-                    <p>Click the microphone icon to search by voice</p>
+            <!-- Zasada 2: Blisko Ciała -->
+            <div class="flex flex-col md:flex-row-reverse items-center bg-yellow-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 rounded-xl">
+                <div class="md:w-1/3 mb-4 md:mb-0 md:ml-6">
+                    <!-- Placeholder dla Mem'a - Błąd -->
+                    <img src="https://placehold.co/400x300/FFD700/333333?text=Wisi+Za+Nisko+Czyli+Wstyd" 
+                         alt="Meme Fail - Plecak wisi za nisko i woła 'olaboga'" 
+                         class="w-full h-auto rounded-lg object-cover shadow-xl"/>
                 </div>
-                
-                <div class="quick-tip">
-                    <strong>Image Search</strong>
-                    <p>Upload or drag images to search visually</p>
-                </div>
-                
-                <div class="quick-tip">
-                    <strong>Calculator</strong>
-                    <p>Type math problems directly in search</p>
-                </div>
-                
-                <div class="quick-tip">
-                    <strong>Weather</strong>
-                    <p>Type "weather" for instant forecasts</p>
-                </div>
-                
-                <div class="quick-tip">
-                    <strong>Translations</strong>
-                    <p>Type "translate [text] to [language]"</p>
-                </div>
-                
-                <div class="quick-tip">
-                    <strong>Unit Conversion</strong>
-                    <p>Convert units like "10 USD to EUR"</p>
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl font-bold text-yellow-700 mb-2">2. Zero Luźnych Akcji, TYLKO PRZYTULANIE.</h2>
+                    <p class="text-gray-700 text-lg">
+                        Plecak ma przylegać do Twoich pleców jak najlepszy przyjaciel, który trzyma ważny sekret. Zaciśnij paski! Plecak wiszący nisko sprawi, że będziesz wyglądać, jakbyś niósł w worku 50kg ziemniaków i wołał do siebie **"Olaboga! Za luźno!"**
+                    </p>
                 </div>
             </div>
 
-            <h3>Keyboard Shortcuts</h3>
-            <div class="step-box">
-                <strong>Common Google Shortcuts:</strong>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li><strong>Ctrl/Cmd + K:</strong> Jump to search box</li>
-                    <li><strong>Ctrl/Cmd + Enter:</strong> Open result in new tab</li>
-                    <li><strong>Tab:</strong> Navigate through results</li>
-                    <li><strong>/:</strong> Jump to search box (on Google homepage)</li>
-                </ul>
+            <!-- Zasada 3: Wysokość -->
+            <div class="flex flex-col md:flex-row items-center bg-pink-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 rounded-xl">
+                <div class="md:w-1/3 mb-4 md:mb-0 md:mr-6">
+                    <!-- Placeholder dla Psa - Waga -->
+                    <img src="https://placehold.co/400x300/FF69B4/FFFFFF?text=Piesek+Zadowolony+Z+Wysokości" 
+                         alt="Pies trzymający plecak wysoko i poprawnie" 
+                         class="w-full h-auto rounded-lg object-cover shadow-xl"/>
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl font-bold text-pink-700 mb-2">3. Trzymaj Go Jak Skarb Królewski!</h2>
+                    <p class="text-gray-700 text-lg">
+                        Dno plecaka powinno znajdować się **maksymalnie 5 cm poniżej Twojej talii** (tak, to jest linia, a nie sugestia). Im wyżej, tym bardziej będziesz wyglądać jak ekspert, a nie jak ktoś, kto dopiero co ukradł plecak.
+                    </p>
+                </div>
             </div>
 
-            <h3>Privacy & Security</h3>
-            <div class="tip-box">
-                <strong>🔒 Stay Safe Online:</strong>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Use strong, unique passwords</li>
-                    <li>Enable 2-step verification</li>
-                    <li>Review your privacy settings regularly</li>
-                    <li>Be cautious with personal information</li>
-                    <li>Sign out on shared computers</li>
-                </ul>
+            <!-- Zasada 4: Waga -->
+            <div class="flex flex-col md:flex-row-reverse items-center bg-teal-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 rounded-xl">
+                <div class="md:w-1/3 mb-4 md:mb-0 md:ml-6">
+                    <!-- Placeholder dla Mem'a - Koniec -->
+                    <img src="https://placehold.co/400x300/40E0D0/101010?text=SUKCES!+Lekko+i+Wygodnie" 
+                         alt="Grafika SUKCES - Lekki plecak i uśmiech" 
+                         class="w-full h-auto rounded-lg object-cover shadow-xl"/>
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl font-bold text-teal-700 mb-2">4. Lżej Znaczy Lepiej (Wyrzuć Cegły).</h2>
+                    <p class="text-gray-700 text-lg">
+                        Limit to **MAX 10-15% Twojej wagi**! Jeśli masz w plecaku cegły, kamienie i dwa słoiki ogórków na czarną godzinę, natychmiast je wyrzuć. Plecak to nie magazyn przetrwania. Dbaj o plecy – są ważniejsze niż ten zapasowy kask.
+                    </p>
+                </div>
             </div>
-        </section>
 
-        <section class="content-section">
-            <h2>🎯 Quick Start Checklist</h2>
-            <p>Follow this checklist to get up and running with Google:</p>
-            
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
-                <label style="display: block; margin: 10px 0;">
-                    <input type="checkbox"> Visit www.google.com
-                </label>
-                <label style="display: block; margin: 10px 0;">
-                    <input type="checkbox"> Try your first search
-                </label>
-                <label style="display: block; margin: 10px 0;">
-                    <input type="checkbox"> Create a Google Account
-                </label>
-                <label style="display: block; margin: 10px 0;">
-                    <input type="checkbox"> Set up Gmail
-                </label>
-                <label style="display: block; margin: 10px 0;">
-                    <input type="checkbox"> Explore Google Drive
-                </label>
-                <label style="display: block; margin: 10px 0;">
-                    <input type="checkbox"> Try Google Maps
-                </label>
-                <label style="display: block; margin: 10px 0;">
-                    <input type="checkbox"> Enable 2-factor authentication
-                </label>
-                <label style="display: block; margin: 10px 0;">
-                    <input type="checkbox"> Bookmark your favorite Google services
-                </label>
-            </div>
-        </section>
+        </main>
 
-        <footer>
-            <p><strong>Google Services Tutorial Demo</strong></p>
-            <p>This is a demonstration site showing how to use Google services</p>
-            <p style="margin-top: 10px; color: #666;">
-                💡 Remember: Google is free to use and available 24/7 from any device with internet!
+        <!-- Stopka -->
+        <footer class="text-center mt-12 pt-6 border-t border-gray-200">
+            <p class="text-gray-500 text-sm font-semibold">
+                Gratulacje! Właśnie awansowałeś na poziom "Plecakowy Ninja".
             </p>
-            <a href="https://www.google.com" target="_blank" class="button">Visit Google Now</a>
+            <p class="text-sm text-gray-500 mt-1">
+                Pamiętaj, że jedyne co może być ciężkie w Twoim życiu to decyzja, jaki serial oglądać.
+            </p>
+            <p class="text-xs text-gray-400 mt-1">
+                © 2025 Poradnik nie-medyczny, ale z sercem. I memami.
+            </p>
         </footer>
+
     </div>
 
-    <script>
-        // Add smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Demo search functionality
-        const demoSearch = document.getElementById('demo-search');
-        if (demoSearch) {
-            demoSearch.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    alert('This is a demo! In real Google, your search for "' + this.value + '" would show results here.');
-                    this.value = '';
-                }
-            });
-        }
-
-        // Interactive service cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const serviceName = this.querySelector('h3').textContent;
-                alert('To use ' + serviceName + ', sign in with your Google account and visit the service from the Google Apps menu or its direct URL!');
-            });
-        });
-
-        // Checklist persistence (for demo purposes)
-        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    this.parentElement.style.textDecoration = 'line-through';
-                    this.parentElement.style.color = '#888';
-                } else {
-                    this.parentElement.style.textDecoration = 'none';
-                    this.parentElement.style.color = '#333';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
